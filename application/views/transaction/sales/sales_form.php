@@ -195,7 +195,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3">
+            <!-- <div class="col-lg-3">
                 <div class="card">
                     <div class="card-body" style="height: 145px;">
                         <table width="100%">
@@ -222,7 +222,7 @@
                         </table>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="col-lg-3">
                 <div class="card">
                     <div class="card-body">
@@ -277,7 +277,7 @@
                             </tr>
                         </thead>
                         <tbody id="tblItem">
-                           <!--  <?php foreach ($item as $i) { ?>
+                        <?php foreach ($item as $i) { ?>
                                 <tr>
                                     <td><?= $i->barcode; ?></td>
                                     <td><?= $i->name; ?></td>
@@ -290,7 +290,7 @@
                                         </button>
                                     </td>
                                 </tr>
-                            <?php } ?> -->
+                        <?php } ?>
                         </tbody>
                     </table>
                 </div>
@@ -408,10 +408,11 @@
         if (subtotal < 1) {
             alert('Product belum dipilih');
             $('#barcode').focus();
-        } else if (cash < 1) {
-            alert('Masukkan Uang Cash');
-            $('#cash').focus();
-        } else {
+        } //else if (cash < 1) {
+        //     alert('Masukkan Uang Cash');
+        //     $('#cash').focus();
+        //}
+        else {
             if (confirm('Ingin memproses transaksi ini?')) {
                 $.ajax({
                     type: "POST",
@@ -434,8 +435,8 @@
                             console.log('Print.......')
 
                             alert('Berhasil melakukan transaksi')
-                            window.open('<?= site_url('sales/cetak/') ?>' + result.sale_id,
-                                '_blank')
+                            //window.open('<?= site_url('sales/cetak/') ?>' + result.sale_id,
+                            //    '_blank')
                             location.reload();
                         } else {
                             alert('gagal melakukan transaksi');
